@@ -1,0 +1,10 @@
+category,metric,local_best_checkpoint,local_epoch150,web_screenshot_estimate,comparison_note
+quality,Precision,0.73944,0.80607,0.80,"Local best-checkpoint precision is lower, while epoch 150 is approximately level with the screenshot plateau."
+quality,Recall,0.78580,0.75057,0.80,"Local best-checkpoint recall is close; the final epoch is lower."
+quality,mAP50,0.80121,0.78176,0.82,"Local result is close, with an estimated gap of about 0.02 at the best checkpoint."
+quality,mAP50-95,0.43646,0.42001,0.46,"Local result is slightly lower; high-IoU localization remains the clearest gap."
+loss,train/box_loss,0.73869,0.71042,0.56,"Local training localization loss is visibly higher."
+loss,train/cls_loss,0.41237,0.39245,0.35,"Local training classification loss is slightly higher."
+loss,train/dfl_loss,1.05498,1.04400,0.97,"Local distribution-focal loss is slightly higher."
+loss,val/box_loss,0.89352,0.90028,1.10,"Local validation box loss is lower."
+loss,val/cls_loss,0.52237,0.52380,0.58,"Local validation classification loss is lower."

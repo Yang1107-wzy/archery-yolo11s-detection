@@ -1,0 +1,26 @@
+{
+  "policy": "Approved absolute workspace paths were rewritten to repository-relative paths.",
+  "rules": [
+    {
+      "replacement": "data/target-arrow-detection-v6/data.yaml",
+      "source_kind": "dataset_yaml"
+    },
+    {
+      "replacement": "models/yolo11s-target-v6/best.pt",
+      "source_kind": "best_checkpoint"
+    },
+    {
+      "replacement": "models/yolo11s-target-v6/last.pt",
+      "source_kind": "last_checkpoint"
+    },
+    {
+      "replacement": "training/150epoch-seed42",
+      "source_kind": "training_run"
+    },
+    {
+      "replacement": ".",
+      "source_kind": "workspace_root"
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,38 @@
+{
+  "best_epoch": 89,
+  "checkpoint": "artifacts/models/replica_target_v6/historical_ultralytics8315_seed0/best.pt",
+  "checkpoint_sha256": "d46c2014d2de887cc0585253f74a2d78cb93b50182bb23e8d5ea623fedf03745",
+  "claim_boundary": "Checkpoint and thresholds were selected only on official v6 valid. Official test was evaluated once after lock and is not used for further tuning. Official splits contain related-image leakage risk.",
+  "config_hash": "fed74f2d68554757b5a98c261dc98d5e18f01ea7ed3b96e3dfe0f3bf17e239c7",
+  "dataset_fingerprint": "b99178e6c76f9fe94f2b1d961de4209c9e5eeb062e33cd2ded1cb17798367a8f",
+  "model": "./artifacts/models/replica_target_v6/historical_ultralytics8315_seed0/best.pt",
+  "official_test": {
+    "f1": 0.7213686195166202,
+    "map50": 0.7589175537193301,
+    "map50_95": 0.46843709397593114,
+    "precision": 0.7467027774196479,
+    "recall": 0.6976971270309854,
+    "score_macro_f1": 0.68649683767848,
+    "target_f1": 0.9923664122137404
+  },
+  "official_test_report": "reports/04_historical_replication_metrics.json",
+  "official_test_status": "evaluated_once_after_lock",
+  "per_class_report": "reports/04_historical_validation_per_class.json",
+  "run_id": "replica_20260719_103806_fed74f2d_historical_full",
+  "selected": {
+    "confidence": 0.2,
+    "f1": 0.7852091596088401,
+    "iou": 0.6,
+    "map50": 0.8124718374040462,
+    "map50_95": 0.4805870908146191,
+    "precision": 0.8312317072253482,
+    "recall": 0.7440154854401912
+  },
+  "selection_split": "valid",
+  "training_best_validation_metrics": {
+    "metrics/mAP50(B)": 0.80853,
+    "metrics/mAP50-95(B)": 0.46049,
+    "metrics/precision(B)": 0.83032,
+    "metrics/recall(B)": 0.74066
+  }
+}

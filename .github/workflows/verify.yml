@@ -1,0 +1,32 @@
+name: Lightweight verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install lightweight dependencies
+        run: python -m pip install -r requirements-ci.lock
+      - name: Run code and publication-contract tests
+        env:
+          PYTHONPATH: src:.
+        run: python -m pytest -q
+      - name: Scan tracked text for private absolute paths and common secret prefixes
+        env:
+          PYTHONPATH: src:.
+        run: python -c "from tools.release_tools import scan_forbidden_text; x=scan_forbidden_text('.'); print(x); raise SystemExit(bool(x))"
+

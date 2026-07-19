@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "model": "models/yolo11s-target-v6/best.pt",
+  "validation_best": {
+    "epoch": 142,
+    "precision": 0.73944,
+    "recall": 0.7858,
+    "map50": 0.80121,
+    "map50_95": 0.43646,
+    "selection": "maximum validation mAP50-95"
+  },
+  "test_standard_ap": {
+    "confidence_floor": 0.001,
+    "nms_iou": 0.7,
+    "precision": 0.7811168522536226,
+    "recall": 0.6726637389442088,
+    "map50": 0.7590066637476979,
+    "map50_95": 0.41314295284697783
+  },
+  "test_locked_operating_point": {
+    "confidence": 0.25,
+    "nms_iou": 0.5,
+    "precision": 0.7816352733819886,
+    "recall": 0.6723283698088912,
+    "f1": 0.7228730533931906,
+    "map50_after_confidence_filtering": 0.6750289415445665,
+    "map50_95_after_confidence_filtering": 0.3773738572897083,
+    "score_macro_f1": 0.6920870641781085,
+    "target_f1": 0.9846153846153847
+  },
+  "claim_boundary": "Validation selection, standard AP integration, and the locked deployment operating point are distinct protocols and must not be interchanged."
+}

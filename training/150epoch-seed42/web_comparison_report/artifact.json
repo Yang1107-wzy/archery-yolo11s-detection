@@ -1,0 +1,440 @@
+{
+  "manifest": {
+    "blocks": [
+      {
+        "body": "# YOLO11s 本地 150 Epoch 与网页版训练指标对比",
+        "id": "title",
+        "type": "markdown"
+      },
+      {
+        "body": "## 技术摘要\n\n- **整体检测水平已接近网页版。** 本地最佳 checkpoint 的 mAP50 为 **80.12%**，网页截图平台约为 **82%**。\n- **主要差距在更严格的定位精度。** 本地 mAP50-95 为 **43.65%**，网页估读约 **46%**，表明高 IoU 阈值下的框定位仍是主要短板。\n- **不能直接宣称谁更好。** 网页只有截图、约 200 epoch；本地是 150 epoch，且数据划分、增强和训练环境是否一致尚未验证。",
+        "id": "technical_summary",
+        "sourceId": "comparison_summary",
+        "type": "markdown"
+      },
+      {
+        "cardIds": [
+          "best_epoch",
+          "best_map50",
+          "best_map5095",
+          "best_recall"
+        ],
+        "id": "metrics",
+        "type": "metric-strip"
+      },
+      {
+        "body": "## 准确率接近，高 IoU 定位仍有小幅差距\n\n下图将本地 epoch 142 最佳 checkpoint 与网页曲线末端平台区进行对照。Precision 与 Recall 总体已处于同一量级；mAP50 差距约 2 个百分点，mAP50-95 差距约 2–3 个百分点。因网页值来自图像估读，这些差值只能用于方向性分析。",
+        "id": "quality_finding",
+        "sourceId": "comparison_summary",
+        "type": "markdown"
+      },
+      {
+        "chartId": "quality_comparison_chart",
+        "id": "quality_chart",
+        "layout": "full",
+        "type": "chart"
+      },
+      {
+        "id": "quality_detail",
+        "layout": "full",
+        "tableId": "quality_table",
+        "type": "table"
+      },
+      {
+        "body": "## 训练损失更高，但本地验证损失更低\n\n本地 epoch 150 的 train/box_loss 约 **0.710**，高于网页估读的 **0.56**；但 val/box_loss 约 **0.900**，低于网页约 **1.10**。这不是矛盾：本地使用 mosaic、scale、translate、HSV 和水平翻转等增强，训练样本可能更难；而验证集上的较低损失说明模型并未出现明显的整体发散。但网页版增强配置未知，因此这一解释是合理推断，不是已证实因果。",
+        "id": "loss_finding",
+        "sourceId": "comparison_summary",
+        "type": "markdown"
+      },
+      {
+        "id": "loss_detail",
+        "layout": "full",
+        "tableId": "loss_table",
+        "type": "table"
+      },
+      {
+        "body": "## 对比口径与指标定义\n\n- **Precision**：所有预测框中，正确预测的比例。\n- **Recall**：所有真实目标中，被模型检出的比例。\n- **mAP50**：在 IoU=0.50 阈值下的平均精度，更偏向判断“是否检出”。\n- **mAP50-95**：在 IoU 0.50–0.95 多个阈值上取平均，对框的精确定位更严格。\n- 本地对比主值来自 epoch 142 的 best.pt；epoch 150 仅作末轮状态参考。",
+        "id": "scope_definitions",
+        "type": "markdown"
+      },
+      {
+        "body": "## 方法与稳健性检查\n\n本地数值由 150 行连续 epoch 的 results.csv 和 run manifest 重算；最佳 checkpoint 按 mAP50-95 选择。网页值依据截图坐标轴和曲线平台区估读，只保留两位有效精度。本地最后 10 个 epoch 的均值为 Precision 78.63%、Recall 75.72%、mAP50 79.01%、mAP50-95 42.62%，说明末期指标总体已进入平台，但单 epoch 仍有波动。",
+        "id": "methodology",
+        "type": "markdown"
+      },
+      {
+        "body": "## 限制与不确定性\n\n1. 网页版没有原始 CSV，因此所有网页数值都是估读，不宜报到小数点后多位。\n2. 网页约训练 200 epoch，本地为 150 epoch；训练长度不同。\n3. 数据集版本、train/val split、模型规模、输入尺寸、增强、优化器与阈值是否一致尚未证明。\n4. 本地 time 在 epoch 81 因恢复训练而归零，不应用图中 time 曲线直接比较训练效率。",
+        "id": "limitations",
+        "type": "markdown"
+      },
+      {
+        "body": "## 组会建议结论\n\n可以表述为：**本地 YOLO11s 复现在 mAP50 上已接近网页版，但 mAP50-95 仍低约 2–3 个百分点，主要改进方向应是箭体/落点框的高 IoU 定位精度，而不是单纯延长训练。**\n\n下一步应先锁定与网页版完全一致的数据划分、图像尺寸、增强和评估阈值，再跑一次受控对比。若条件一致后 mAP50-95 仍偏低，再优先检查框标注边界、小目标分辨率和 box/DFL 损失配置。",
+        "id": "recommendations",
+        "type": "markdown"
+      },
+      {
+        "body": "## 待确认问题\n\n- 网页版是否使用同一份 Target v6 数据和同一 train/val split？\n- 网页版的模型规模、输入尺寸、batch size 和增强参数是什么？\n- 能否导出网页版 results.csv 或精确的 best checkpoint 指标？",
+        "id": "further_questions",
+        "type": "markdown"
+      }
+    ],
+    "cards": [
+      {
+        "dataset": "summary",
+        "description": "按 mAP50-95 选出的本地最佳 checkpoint。",
+        "id": "best_epoch",
+        "metrics": [
+          {
+            "field": "best_epoch",
+            "format": "number",
+            "label": "最佳 Epoch"
+          }
+        ],
+        "sourceId": "local_results"
+      },
+      {
+        "dataset": "summary",
+        "description": "本地最佳 checkpoint 在 IoU=0.50 下的平均精度。",
+        "id": "best_map50",
+        "metrics": [
+          {
+            "field": "best_map50",
+            "format": "percent",
+            "label": "mAP50"
+          }
+        ],
+        "sourceId": "local_results"
+      },
+      {
+        "dataset": "summary",
+        "description": "本地最佳 checkpoint 在 IoU 0.50:0.95 上的平均精度。",
+        "id": "best_map5095",
+        "metrics": [
+          {
+            "field": "best_map5095",
+            "format": "percent",
+            "label": "mAP50-95"
+          }
+        ],
+        "sourceId": "local_results"
+      },
+      {
+        "dataset": "summary",
+        "description": "本地最佳 mAP50-95 checkpoint 的召回率。",
+        "id": "best_recall",
+        "metrics": [
+          {
+            "field": "best_recall",
+            "format": "percent",
+            "label": "Recall"
+          }
+        ],
+        "sourceId": "local_results"
+      }
+    ],
+    "charts": [
+      {
+        "dataset": "quality_chart",
+        "encodings": {
+          "color": {
+            "field": "series",
+            "label": "版本",
+            "type": "nominal"
+          },
+          "x": {
+            "field": "metric",
+            "label": "指标",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "score",
+            "format": "percent",
+            "label": "数值",
+            "type": "quantitative"
+          }
+        },
+        "id": "quality_comparison_chart",
+        "layout": "full",
+        "sourceId": "comparison_summary",
+        "subtitle": "本地使用 epoch 142 最佳 checkpoint；网页值仅为截图平台区估读。",
+        "title": "检测质量指标对比",
+        "type": "bar",
+        "valueFormat": "percent",
+        "yAxisTitle": "指标值"
+      }
+    ],
+    "description": "组会汇报用技术对比：本地结果为 CSV 精确值，网页结果为截图估读值。",
+    "generatedAt": "2026-07-19T18:00:00+08:00",
+    "sources": [
+      {
+        "id": "local_results",
+        "label": "本地 YOLO11s 150-epoch results.csv",
+        "path": "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv",
+        "query": {
+          "description": "读取本地 150 个 epoch 的完整训练指标。",
+          "engine": "duckdb",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv')",
+          "tables_used": [
+            "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv"
+          ]
+        }
+      },
+      {
+        "id": "web_screenshot",
+        "label": "用户提供的 Roboflow Train Metrics 截图",
+        "path": "codex-clipboard-4c5922cf-af97-4e4f-8a6c-e3a386284c92.png"
+      },
+      {
+        "id": "comparison_summary",
+        "label": "经复核的本地精确值与网页估读值",
+        "path": "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv",
+        "query": {
+          "description": "读取已复核的本地精确值和网页截图估读值。",
+          "engine": "duckdb",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv')",
+          "tables_used": [
+            "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv"
+          ]
+        }
+      }
+    ],
+    "surface": "report",
+    "tables": [
+      {
+        "columns": [
+          {
+            "field": "metric",
+            "label": "指标",
+            "type": "text"
+          },
+          {
+            "field": "local_best",
+            "format": "percent",
+            "label": "本地最佳 checkpoint"
+          },
+          {
+            "field": "local_final",
+            "format": "percent",
+            "label": "本地 epoch 150"
+          },
+          {
+            "field": "web_estimate",
+            "format": "percent",
+            "label": "网页截图估读"
+          },
+          {
+            "field": "interpretation",
+            "label": "解读",
+            "type": "text"
+          }
+        ],
+        "dataset": "quality_table",
+        "defaultSort": {
+          "direction": "asc",
+          "field": "metric"
+        },
+        "id": "quality_table",
+        "sourceId": "comparison_summary",
+        "subtitle": "本地为可追溯 CSV 值；网页版需原始 metrics 才能进行正式差值检验。",
+        "title": "精度指标精确值与估读值"
+      },
+      {
+        "columns": [
+          {
+            "field": "metric",
+            "label": "指标",
+            "type": "text"
+          },
+          {
+            "field": "local_final",
+            "format": "number",
+            "label": "本地 epoch 150"
+          },
+          {
+            "field": "web_estimate",
+            "format": "number",
+            "label": "网页截图估读"
+          },
+          {
+            "field": "interpretation",
+            "label": "解读",
+            "type": "text"
+          }
+        ],
+        "dataset": "loss_table",
+        "defaultSort": {
+          "direction": "asc",
+          "field": "metric"
+        },
+        "id": "loss_table",
+        "sourceId": "comparison_summary",
+        "subtitle": "损失值仅在数据、模型、增强和损失权重一致时才能严格横比。",
+        "title": "损失函数对比"
+      }
+    ],
+    "title": "YOLO11s 本地 150 Epoch 与网页版训练指标对比",
+    "version": 1
+  },
+  "snapshot": {
+    "datasets": {
+      "loss_table": [
+        {
+          "interpretation": "本地较高",
+          "local_final": 0.71042,
+          "metric": "train/box_loss",
+          "metric_order": 1,
+          "web_estimate": 0.56
+        },
+        {
+          "interpretation": "本地略高",
+          "local_final": 0.39245,
+          "metric": "train/cls_loss",
+          "metric_order": 2,
+          "web_estimate": 0.35
+        },
+        {
+          "interpretation": "本地略高",
+          "local_final": 1.044,
+          "metric": "train/dfl_loss",
+          "metric_order": 3,
+          "web_estimate": 0.97
+        },
+        {
+          "interpretation": "本地较低",
+          "local_final": 0.90028,
+          "metric": "val/box_loss",
+          "metric_order": 4,
+          "web_estimate": 1.1
+        },
+        {
+          "interpretation": "本地较低",
+          "local_final": 0.5238,
+          "metric": "val/cls_loss",
+          "metric_order": 5,
+          "web_estimate": 0.58
+        }
+      ],
+      "quality_chart": [
+        {
+          "metric": "Precision",
+          "score": 0.73944,
+          "series": "本地 best"
+        },
+        {
+          "metric": "Precision",
+          "score": 0.8,
+          "series": "网页估读"
+        },
+        {
+          "metric": "Recall",
+          "score": 0.7858,
+          "series": "本地 best"
+        },
+        {
+          "metric": "Recall",
+          "score": 0.8,
+          "series": "网页估读"
+        },
+        {
+          "metric": "mAP50",
+          "score": 0.80121,
+          "series": "本地 best"
+        },
+        {
+          "metric": "mAP50",
+          "score": 0.82,
+          "series": "网页估读"
+        },
+        {
+          "metric": "mAP50-95",
+          "score": 0.43646,
+          "series": "本地 best"
+        },
+        {
+          "metric": "mAP50-95",
+          "score": 0.46,
+          "series": "网页估读"
+        }
+      ],
+      "quality_table": [
+        {
+          "interpretation": "best checkpoint 偏低，末轮与网页平台接近",
+          "local_best": 0.73944,
+          "local_final": 0.80607,
+          "metric": "Precision",
+          "metric_order": 1,
+          "web_estimate": 0.8
+        },
+        {
+          "interpretation": "best checkpoint 接近，末轮偏低",
+          "local_best": 0.7858,
+          "local_final": 0.75057,
+          "metric": "Recall",
+          "metric_order": 2,
+          "web_estimate": 0.8
+        },
+        {
+          "interpretation": "最佳结果约低 2 个百分点",
+          "local_best": 0.80121,
+          "local_final": 0.78176,
+          "metric": "mAP50",
+          "metric_order": 3,
+          "web_estimate": 0.82
+        },
+        {
+          "interpretation": "高 IoU 定位精度约低 2–3 个百分点",
+          "local_best": 0.43646,
+          "local_final": 0.42001,
+          "metric": "mAP50-95",
+          "metric_order": 4,
+          "web_estimate": 0.46
+        }
+      ],
+      "summary": [
+        {
+          "best_epoch": 142,
+          "best_map50": 0.80121,
+          "best_map5095": 0.43646,
+          "best_recall": 0.7858
+        }
+      ]
+    },
+    "generatedAt": "2026-07-19T18:00:00+08:00",
+    "status": "ready",
+    "version": 1
+  },
+  "sources": [
+    {
+      "id": "local_results",
+      "label": "本地 YOLO11s 150-epoch results.csv",
+      "path": "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv",
+      "query": {
+        "description": "读取本地 150 个 epoch 的完整训练指标。",
+        "engine": "duckdb",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv')",
+        "tables_used": [
+          "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/results.csv"
+        ]
+      }
+    },
+    {
+      "id": "web_screenshot",
+      "label": "用户提供的 Roboflow Train Metrics 截图",
+      "path": "codex-clipboard-4c5922cf-af97-4e4f-8a6c-e3a386284c92.png"
+    },
+    {
+      "id": "comparison_summary",
+      "label": "经复核的本地精确值与网页估读值",
+      "path": "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv",
+      "query": {
+        "description": "读取已复核的本地精确值和网页截图估读值。",
+        "engine": "duckdb",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv')",
+        "tables_used": [
+          "artifacts/training_runs/replica_20260719_002149_184e8ce2_full/web_comparison_report/comparison_summary.csv"
+        ]
+      }
+    }
+  ],
+  "surface": "report"
+}

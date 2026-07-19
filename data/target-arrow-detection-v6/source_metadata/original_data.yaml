@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 12
+names: ['0', '1', '10', '2', '3', '4', '5', '6', '7', '8', '9', 'target']
+
+roboflow:
+  workspace: archery-zrbei
+  project: target-and-arrow-detection
+  version: 6
+  license: MIT
+  url: https://universe.roboflow.com/archery-zrbei/target-and-arrow-detection/dataset/6

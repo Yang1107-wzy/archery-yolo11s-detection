@@ -1,0 +1,18 @@
+{
+  "batch": 8,
+  "claim_boundary": "Public test evaluated with a low confidence floor for AP integration. These AP values are not the locked deployment-threshold operating point.",
+  "confidence_floor": 0.001,
+  "data_yaml": "data/target-arrow-detection-v6/data.yaml",
+  "device": "mps",
+  "imgsz": 640,
+  "metrics": {
+    "map50": 0.7590066637476979,
+    "map50_95": 0.41314295284697783,
+    "precision": 0.7811168522536226,
+    "recall": 0.6726637389442088
+  },
+  "model": "models/yolo11s-target-v6/best.pt",
+  "nms_iou": 0.7,
+  "protocol": "standard_ap_low_confidence_sweep",
+  "split": "test"
+}

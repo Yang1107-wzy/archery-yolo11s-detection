@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "source_epoch": 142,
+  "source_checkpoint_sha256": "907cc29dfa58a1cb2cf30938780a873589b32e442a8fb13f18158d9dbc000931",
+  "source_checkpoint_published": false,
+  "optimizer_requested": "auto",
+  "optimizer_resolved": "AdamW",
+  "configured_lr0": 0.01,
+  "configured_lrf": 0.01,
+  "effective_initial_lr": 0.000625,
+  "epoch_142_lr": 0.00003925,
+  "betas": [0.9, 0.999],
+  "weight_decay_by_group": {
+    "weight": 0.0005,
+    "batch_norm": 0.0,
+    "bias": 0.0
+  },
+  "note": "Only scalar optimizer metadata is published; optimizer tensors and the 72.5 MiB intermediate epoch checkpoint are excluded."
+}

@@ -1,0 +1,23 @@
+{
+  "dataset": {
+    "images": 1645,
+    "splits": {
+      "test": 65,
+      "train": 1482,
+      "valid": 98
+    }
+  },
+  "excluded_intermediate_checkpoints": true,
+  "published_model_files": [
+    "best.pt",
+    "last.pt"
+  ],
+  "training": {
+    "best_epoch": 142,
+    "best_map50": 0.80121,
+    "best_map50_95": 0.43646,
+    "epochs": 150,
+    "first_epoch": 1,
+    "last_epoch": 150
+  }
+}

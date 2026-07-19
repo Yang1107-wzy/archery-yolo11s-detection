@@ -1,0 +1,8 @@
+{
+  "archive": "./data/inbox/target-and-arrow-detection-v6.zip",
+  "data_yaml": "data/target-arrow-detection-v6/data.yaml",
+  "destination": "./data/raw/target_arrow_v6",
+  "ingested_at": "2026-07-18T23:58:06+08:00",
+  "source_preserved": true,
+  "zip_sha256": "d81c8389e9bf1698b8bf86d76471024882c45cf090685f3704c0132357be53bd"
+}

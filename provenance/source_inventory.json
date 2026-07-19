@@ -1,0 +1,281 @@
+{
+  "files": [
+    {
+      "bytes": 155,
+      "source_role": "README.dataset.txt",
+      "source_sha256": "1de52eaa774e9f14e3995f1c87b2d5a5225884867c32b7838fb2b2b435828f4e",
+      "target": "data/target-arrow-detection-v6/source_metadata/README.dataset.txt"
+    },
+    {
+      "bytes": 1286,
+      "source_role": "README.roboflow.txt",
+      "source_sha256": "6105be8d8cfd532cd336df381016078327e51d37f55f6a2e1d572c722338f241",
+      "target": "data/target-arrow-detection-v6/source_metadata/README.roboflow.txt"
+    },
+    {
+      "bytes": 455,
+      "source_role": "INGEST_MANIFEST.json",
+      "source_sha256": "9beb77ea4c7a650b71066e58d967d489171c5a57ca583ad67b7b1a34480408e9",
+      "target": "data/target-arrow-detection-v6/source_metadata/INGEST_MANIFEST.json"
+    },
+    {
+      "bytes": 338,
+      "source_role": "data.yaml",
+      "source_sha256": "f4f808aff11516723c6d68079ccf009dcfa93a208897c3b23dc424d78052ab76",
+      "target": "data/target-arrow-detection-v6/source_metadata/original_data.yaml"
+    },
+    {
+      "bytes": 19226065,
+      "source_role": "best.pt",
+      "source_sha256": "699235268b229cbb5e401d4fb0559d788630de04267605d2927aad60aa262b20",
+      "target": "models/yolo11s-target-v6/best.pt"
+    },
+    {
+      "bytes": 19226065,
+      "source_role": "last.pt",
+      "source_sha256": "6e1db278f809bfd9474c8a0873adb10dd2e34e5e1cab82055e8c32ff91ab0384",
+      "target": "models/yolo11s-target-v6/last.pt"
+    },
+    {
+      "bytes": 349125,
+      "source_role": "BoxF1_curve.png",
+      "source_sha256": "119cd875d25faeb94b520a77d0a4866e7fea752f46e6c29b2b1a74f9f0034adf",
+      "target": "training/150epoch-seed42/BoxF1_curve.png"
+    },
+    {
+      "bytes": 168590,
+      "source_role": "BoxPR_curve.png",
+      "source_sha256": "890c75fb13f6cfbfe2d455e33c57ea7feddb36a8ab91a31431080d5732ecf108",
+      "target": "training/150epoch-seed42/BoxPR_curve.png"
+    },
+    {
+      "bytes": 306287,
+      "source_role": "BoxP_curve.png",
+      "source_sha256": "8afc96a5d14ec5816f38805634b5ced08ca90c577a087aa131169b7c9222299b",
+      "target": "training/150epoch-seed42/BoxP_curve.png"
+    },
+    {
+      "bytes": 265217,
+      "source_role": "BoxR_curve.png",
+      "source_sha256": "33f9472b9ed2fdfa9a9b6d12721489c18349582992da75fc091537feac392069",
+      "target": "training/150epoch-seed42/BoxR_curve.png"
+    },
+    {
+      "bytes": 128039,
+      "source_role": "confusion_matrix.png",
+      "source_sha256": "7441735e29c8a624cf061f9e62ac59ef7a4494c377f172b1b2a0b45c1d252ecd",
+      "target": "training/150epoch-seed42/confusion_matrix.png"
+    },
+    {
+      "bytes": 197037,
+      "source_role": "confusion_matrix_normalized.png",
+      "source_sha256": "23c3e8c53837c233463ebd1b51e979beacb7f2773058b99708935db07ebd92f9",
+      "target": "training/150epoch-seed42/confusion_matrix_normalized.png"
+    },
+    {
+      "bytes": 175990,
+      "source_role": "labels.jpg",
+      "source_sha256": "444dd81cfe0289616c1ad460cd99a669c2f5b9267ab84f569a1b91c3593bb36d",
+      "target": "training/150epoch-seed42/labels.jpg"
+    },
+    {
+      "bytes": 18657,
+      "source_role": "results.csv",
+      "source_sha256": "1fb1b47ec57c94062df613d4fb5898a23a5cf53b60feefb188141b813a7148ae",
+      "target": "training/150epoch-seed42/results.csv"
+    },
+    {
+      "bytes": 269190,
+      "source_role": "results.png",
+      "source_sha256": "efa45ca512152bdb2cd0786a3d317d3f59ed1f3b6a4f371c1a3e4d78106b03f4",
+      "target": "training/150epoch-seed42/results.png"
+    },
+    {
+      "bytes": 58246,
+      "source_role": "roboflow_style_metrics_150epochs.pdf",
+      "source_sha256": "e2676f4a4cf7224e5cad4dd9480b1face2c700770824924c3002dc01d379d9ae",
+      "target": "training/150epoch-seed42/roboflow_style_metrics_150epochs.pdf"
+    },
+    {
+      "bytes": 567207,
+      "source_role": "roboflow_style_metrics_150epochs.png",
+      "source_sha256": "9fa2818f1fcf09d4105b09d70a244bdb78a876a4865fa71af65c3342fddce00f",
+      "target": "training/150epoch-seed42/roboflow_style_metrics_150epochs.png"
+    },
+    {
+      "bytes": 708269,
+      "source_role": "train_batch0.jpg",
+      "source_sha256": "2ad87594b12450a51ace98ae7cd399b0e6ae912f6d0e3162c05484118c4dfcc4",
+      "target": "training/150epoch-seed42/train_batch0.jpg"
+    },
+    {
+      "bytes": 649348,
+      "source_role": "train_batch1.jpg",
+      "source_sha256": "12b6beb4872fbb95233e708d4ce25afefb64e78bcf064b9a6b9e45bc6a299e06",
+      "target": "training/150epoch-seed42/train_batch1.jpg"
+    },
+    {
+      "bytes": 810579,
+      "source_role": "train_batch2.jpg",
+      "source_sha256": "54cb43c945f4f1498964ce953476c8d56a88b6c86331478956f3ed53a57035e9",
+      "target": "training/150epoch-seed42/train_batch2.jpg"
+    },
+    {
+      "bytes": 629251,
+      "source_role": "train_batch26040.jpg",
+      "source_sha256": "f8720f4244e551e07cf2fa5bd043c60a68cb0ccf1797acbdb564cef05c315b28",
+      "target": "training/150epoch-seed42/train_batch26040.jpg"
+    },
+    {
+      "bytes": 518410,
+      "source_role": "train_batch26041.jpg",
+      "source_sha256": "903e37f66dd429837a386d9a23d4b62c8bb36afa63614e013fa08ef6ef42db91",
+      "target": "training/150epoch-seed42/train_batch26041.jpg"
+    },
+    {
+      "bytes": 760007,
+      "source_role": "train_batch26042.jpg",
+      "source_sha256": "6e7d5c206d325a6fb77212a1a4a0cd5eba93739af947359c8ebfe52297f492cc",
+      "target": "training/150epoch-seed42/train_batch26042.jpg"
+    },
+    {
+      "bytes": 865786,
+      "source_role": "val_batch0_labels.jpg",
+      "source_sha256": "78fe40c6e1ad69b037176183e37d7c0eb7ee9ec152eb1c4c1ca2c9af9583e5a0",
+      "target": "training/150epoch-seed42/val_batch0_labels.jpg"
+    },
+    {
+      "bytes": 871849,
+      "source_role": "val_batch0_pred.jpg",
+      "source_sha256": "6254965c2e8f02511233a5dcd0af10d7cd43d4b4fb794585d6a70190f6bbff4a",
+      "target": "training/150epoch-seed42/val_batch0_pred.jpg"
+    },
+    {
+      "bytes": 581481,
+      "source_role": "val_batch1_labels.jpg",
+      "source_sha256": "bdbb2f5eaf7ca8a2f01071a180a65b6b072a36103e5085da4858b29a313b1b06",
+      "target": "training/150epoch-seed42/val_batch1_labels.jpg"
+    },
+    {
+      "bytes": 596830,
+      "source_role": "val_batch1_pred.jpg",
+      "source_sha256": "b4e50985acaf2ca1eafca34c5f6e903c4e9577984e41298a8a2076c924b07b47",
+      "target": "training/150epoch-seed42/val_batch1_pred.jpg"
+    },
+    {
+      "bytes": 801588,
+      "source_role": "val_batch2_labels.jpg",
+      "source_sha256": "ddc90ba3a62ebf07d26d93adb39f86eb95643367bfe9456b0fe5c78d5c80d3d7",
+      "target": "training/150epoch-seed42/val_batch2_labels.jpg"
+    },
+    {
+      "bytes": 816160,
+      "source_role": "val_batch2_pred.jpg",
+      "source_sha256": "400194129c6eb0b9251aa4418877f18c1b54661d52ceb412fc6bc0ca91197fb9",
+      "target": "training/150epoch-seed42/val_batch2_pred.jpg"
+    },
+    {
+      "bytes": 4831,
+      "source_role": "run_manifest",
+      "source_sha256": "d993a7c0e37008119135be6b9f9c6958dfa002e659548ba21b91e5b2dde10bc4",
+      "target": "training/150epoch-seed42/run_manifest.json"
+    },
+    {
+      "bytes": 85,
+      "source_role": "__init__.py",
+      "source_sha256": "56c7b684c97495660d0cef23dad7dae4ac3de9c22dd74f880ef8581268b014a3",
+      "target": "src/archery_ml/__init__.py"
+    },
+    {
+      "bytes": 3547,
+      "source_role": "registry.py",
+      "source_sha256": "6379203642a67a90401e3528d2b200305ce57b87124a89ddc4d21719f066b5f2",
+      "target": "src/archery_ml/registry.py"
+    },
+    {
+      "bytes": 37,
+      "source_role": "__init__.py",
+      "source_sha256": "8bf21c38e4f40672410d28c5a1313b305a235223939bd427917cb61857729334",
+      "target": "src/archery_ml/data/__init__.py"
+    },
+    {
+      "bytes": 11200,
+      "source_role": "audit_yolo.py",
+      "source_sha256": "f9902b3856aa7fbf12ba062fbcd5b6f94aab8cb59ca5d7279ebd46754130312e",
+      "target": "src/archery_ml/data/audit_yolo.py"
+    },
+    {
+      "bytes": 1705,
+      "source_role": "dataset_fingerprint.py",
+      "source_sha256": "705cec23091ba64fdd4b93ee44d69a08c41408eca6b852404d643855cebb6e2e",
+      "target": "src/archery_ml/data/dataset_fingerprint.py"
+    },
+    {
+      "bytes": 36,
+      "source_role": "__init__.py",
+      "source_sha256": "3c78788ea0fb8b468bf16f215d385ccca713e31b0d6625da9c1c4e1f920e5b92",
+      "target": "src/archery_ml/models/__init__.py"
+    },
+    {
+      "bytes": 14034,
+      "source_role": "train_yolo.py",
+      "source_sha256": "b6356768a4b8df20c7202a7478070fc18448be88d046e1433a247149109924db",
+      "target": "src/archery_ml/models/train_yolo.py"
+    },
+    {
+      "bytes": 5658,
+      "source_role": "predict_score.py",
+      "source_sha256": "7e6f590311e89cc18037460f22ccb6b93ef442fb4758ff2c519c742fc5e1e049",
+      "target": "src/archery_ml/models/predict_score.py"
+    },
+    {
+      "bytes": 54,
+      "source_role": "__init__.py",
+      "source_sha256": "dfed1de4d93766174b481f9b114fea408fc1d52bbde6ce4e9dbfa31beeb7fec8",
+      "target": "src/archery_ml/evaluation/__init__.py"
+    },
+    {
+      "bytes": 8258,
+      "source_role": "threshold_sweep.py",
+      "source_sha256": "53d2adab11ff7c2722a31a76347c9e9a73fc9a8ae70f16d58f2822aea187cc3a",
+      "target": "src/archery_ml/evaluation/threshold_sweep.py"
+    },
+    {
+      "bytes": 32,
+      "source_role": "__init__.py",
+      "source_sha256": "1f624e8c6150c5051ddfa3297f3836f8f652c9775db0bb711b2f1babb4cdeb3c",
+      "target": "src/archery_ml/viz/__init__.py"
+    },
+    {
+      "bytes": 4296,
+      "source_role": "roboflow_train_metrics.py",
+      "source_sha256": "d82149bf4185d759163cbbeb96ed204ab2d4b9f9c548c093a913e9de0afdba2d",
+      "target": "src/archery_ml/viz/roboflow_train_metrics.py"
+    },
+    {
+      "bytes": 2381,
+      "source_role": "test_replication_yolo_audit.py",
+      "source_sha256": "6e2eba7ec045f9564b06a95b665a3f8b0b29ff5659ad3b2ca6b9c4850c11a9a6",
+      "target": "tests/test_replication_yolo_audit.py"
+    },
+    {
+      "bytes": 856,
+      "source_role": "test_replication_predict.py",
+      "source_sha256": "cd2ba439ec593e460d8436493623068bcefeb39fced760ba3be220d7cb28346a",
+      "target": "tests/test_replication_predict.py"
+    },
+    {
+      "bytes": 1752,
+      "source_role": "test_replication_evaluation.py",
+      "source_sha256": "12377a2baa561a935858be17bcbab7306c8842e68f54e61d0b084bf753b465e7",
+      "target": "tests/test_replication_evaluation.py"
+    },
+    {
+      "bytes": 1589,
+      "source_role": "test_roboflow_train_metrics_plot.py",
+      "source_sha256": "783672da38feb299cbf6b0c7493a85400d57175febd7144df131416a6332abc7",
+      "target": "tests/test_roboflow_train_metrics_plot.py"
+    }
+  ],
+  "schema_version": 1
+}

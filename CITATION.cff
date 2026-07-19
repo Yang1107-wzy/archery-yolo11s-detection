@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Archery Target and Arrow Detection with YOLO11s"
+version: 1.0.0
+date-released: 2026-07-19
+type: software
+license: AGPL-3.0-only
+repository-code: "https://github.com/Yang1107-wzy/archery-yolo11s-detection"
+authors:
+  - given-names: Zhengyang
+    family-names: Wang
+    affiliation: Beijing Normal-Hong Kong Baptist University
+  - given-names: Jiacheng
+    family-names: Yao
+    affiliation: Beijing Normal-Hong Kong Baptist University
