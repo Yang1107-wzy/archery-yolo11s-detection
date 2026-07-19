@@ -24,6 +24,16 @@ An evidence-oriented, reproducible release of a 150-epoch YOLO11s detector for a
 
 \* At the locked operating point, AP was recomputed after confidence filtering and is therefore not directly comparable to standard AP. See [RESULTS.md](RESULTS.md).
 
+## Visual evidence
+
+![Training dynamics from the canonical 150-row log](docs/assets/visuals/training_dynamics.png)
+
+The raw log shows continued optimization across all 150 epochs, a resume boundary at Epoch 81, and the best validation mAP50–95 at Epoch 142. Model selection, standard AP test and the locked deployment operating point remain separate protocols.
+
+![Real local inference using the published best.pt](docs/assets/visuals/local_model_inference_streamlit.png)
+
+This qualitative local run by Zhengyang Wang uses `confidence=0.25` and `NMS IoU=0.50`. It demonstrates full-target detection (`target 0.94`) and also makes the dense-overlap/readability limitation visible. It does not replace the 65-image independent test, and predicted box centers are not physical impact points. See the [Detailed visual analysis](VISUAL_ANALYSIS.md) for the model, dataset, training, evaluation and diagnostic figures.
+
 ## Dataset
 
 Target and Arrow Detection v6 contains 1,645 images at \(640\times640\) with paired YOLO labels:
@@ -105,4 +115,3 @@ The public splits may contain visually related or offline-augmented variants acr
 ## License and citation
 
 Project code and fine-tuned weights are released under the GNU Affero General Public License v3.0. Dataset files retain the source dataset's MIT terms and attribution. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [CITATION.cff](CITATION.cff). No ORCID, email, or DOI is asserted.
-

@@ -1,0 +1,4 @@
+protocol,epoch,precision,recall,map50,map50_95,selection,confidence_floor,nms_iou,confidence,f1,map50_after_confidence_filtering,map50_95_after_confidence_filtering,score_macro_f1,target_f1
+best_validation,142.0,0.73944,0.7858,0.80121,0.43646,maximum validation mAP50-95,,,,,,,,
+standard_ap_test,,0.7811168522536226,0.6726637389442088,0.7590066637476979,0.41314295284697783,,0.001,0.7,,,,,,
+locked_operating_point_test,,0.7816352733819886,0.6723283698088912,,,,,0.5,0.25,0.7228730533931906,0.6750289415445665,0.3773738572897083,0.6920870641781085,0.9846153846153847

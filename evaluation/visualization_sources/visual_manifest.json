@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "generator": "scripts/generate_repository_visuals.py",
+  "dataset": {
+    "class_names": [
+      "0",
+      "1",
+      "10",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "target"
+    ],
+    "splits": {
+      "train": {
+        "images": 1482,
+        "labels": 1482,
+        "instances": 4131
+      },
+      "validation": {
+        "images": 98,
+        "labels": 98,
+        "instances": 252
+      },
+      "test": {
+        "images": 65,
+        "labels": 65,
+        "instances": 200
+      }
+    },
+    "class_instances": {
+      "0": 164,
+      "1": 135,
+      "10": 207,
+      "2": 196,
+      "3": 211,
+      "4": 306,
+      "5": 319,
+      "6": 241,
+      "7": 322,
+      "8": 284,
+      "9": 407,
+      "target": 1791
+    },
+    "total_images": 1645,
+    "total_labels": 1645,
+    "total_instances": 4583
+  },
+  "canonical_values": {
+    "best_validation_epoch": 142,
+    "best_validation_map50_95": 0.43646,
+    "standard_test_map50": 0.7590066637476979,
+    "standard_test_map50_95": 0.41314295284697783,
+    "locked_confidence": 0.25,
+    "locked_nms_iou": 0.5
+  },
+  "figures": {
+    "model_pipeline.png": {
+      "sha256": "4105c86d9b94d124fcddf36dd1c5488bbca29ad0741d383793311ddae14a2ac2"
+    },
+    "dataset_overview.png": {
+      "sha256": "456b4103553af4eb9ee8f47f7cc88d8e42eba2d3cbe123cb8c6f23442031f532"
+    },
+    "dataset_samples.png": {
+      "sha256": "4de91ce10845e3b9ed1f5a6c5603142a59f20df5fd8da195561f5aaffe9a2f44"
+    },
+    "training_dynamics.png": {
+      "sha256": "b535569553661a3842ed623031d241a91fca7449392f83a78edefe7acb148987"
+    },
+    "evaluation_comparison.png": {
+      "sha256": "fd62627b98db89b8fa69a95e685edc20144694588e75fb035fc1a680ff1f026a"
+    }
+  },
+  "claim_boundary": "Validation selection, standard AP integration, and the locked deployment operating point are distinct protocols and must not be interchanged."
+}

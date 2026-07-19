@@ -24,6 +24,16 @@
 
 \* 锁定工作点的 AP 是在置信度过滤后重新计算的，不能与标准 AP 直接横向比较，详见 [RESULTS.zh-CN.md](RESULTS.zh-CN.md)。
 
+## 可视化证据
+
+![来自 150 行真实日志的训练曲线](docs/assets/visuals/training_dynamics.png)
+
+真实逐 epoch 日志显示模型完成了 150 epochs；Epoch 81 是恢复训练边界；validation mAP50–95 在 Epoch 142 达到最高。模型选择、标准 AP test 和锁定部署工作点始终按三套协议分别报告。
+
+![使用公开 best.pt 的本地真实推理](docs/assets/visuals/local_model_inference_streamlit.png)
+
+这张 Zhengyang Wang 本地定性案例使用 `confidence=0.25`、`NMS IoU=0.50`，既展示完整靶面检测（`target 0.94`），也直观显示中心区域密集重叠和文字可读性局限。它不能替代 65 张独立 test，预测检测框中心也不等同于物理撞击点。模型、数据、训练、评估和诊断图详见[完整可视化分析](VISUAL_ANALYSIS.zh-CN.md)。
+
 ## 数据集
 
 Target and Arrow Detection v6 共 1,645 张 \(640\times640\) 图片，每张图片均有对应 YOLO 标签：train 1,482、validation 98、test 65。12 类顺序为 `0, 1, 10, 2, 3, 4, 5, 6, 7, 8, 9, target`。
@@ -73,4 +83,3 @@ python -m archery_ml.cli infer --model models/yolo11s-target-v6/best.pt --source
 ## 许可与引用
 
 项目代码和微调权重采用 GNU AGPL-3.0；数据文件保留来源数据集的 MIT 条款与署名。详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 和 [CITATION.cff](CITATION.cff)。本版本不填写 ORCID、邮箱或 DOI。
-

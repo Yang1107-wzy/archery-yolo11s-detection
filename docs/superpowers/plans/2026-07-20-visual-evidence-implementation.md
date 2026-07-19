@@ -1,6 +1,6 @@
 # Visual Evidence Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED WORKFLOW: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan one task at a time. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Add source-backed model, dataset, training, evaluation and real local-inference visuals to the bilingual GitHub repository, then verify and publish them to `main`.
 
