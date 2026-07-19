@@ -56,7 +56,9 @@ def test_lfs_and_ci_contracts() -> None:
     attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
     workflow = (ROOT / ".github/workflows/verify.yml").read_text(encoding="utf-8")
     launcher = (ROOT / "scripts/run_yolo_replica_demo.sh").read_text(encoding="utf-8")
+    ci_requirements = (ROOT / "requirements-ci.lock").read_text(encoding="utf-8")
     assert "data/target-arrow-detection-v6/**/images/**" in attributes
     assert "models/yolo11s-target-v6/*.pt" in attributes
     assert "lfs: false" in workflow
     assert ".venv_streamlit_demo" not in launcher
+    assert "scipy==1.17.1" in ci_requirements

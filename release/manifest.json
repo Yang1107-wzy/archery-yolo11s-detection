@@ -16652,9 +16652,9 @@
       "sha256": "8e806aaa8d065d6ceff1410576707da4fe20d1a53add794dc7bec6554fd0b90f"
     },
     {
-      "bytes": 926,
+      "bytes": 945,
       "path": "pyproject.toml",
-      "sha256": "7c4e9c81a4532be4ec95bb83ce7a1fb046e544c165d2f89f4353323fe4afc284"
+      "sha256": "c1b6a3997229fe93cab39ea6da383d35210ffa89202c352c34338ad4f07abc65"
     },
     {
       "bytes": 1398,
@@ -16662,9 +16662,9 @@
       "sha256": "e0d76d60a904fc90ebf0d92fb54ce1a44e3c6669270184ca0b054df1a727f81b"
     },
     {
-      "bytes": 114,
+      "bytes": 128,
       "path": "requirements-ci.lock",
-      "sha256": "790be517e7932d0cd486a68d65cec7a0eebc170b55f6ab46742080e972bc95a0"
+      "sha256": "18d239e67fe895f772cc46f7bbdd7c46742386dfa7b7073aaf39b96185636502"
     },
     {
       "bytes": 45,
@@ -16672,9 +16672,9 @@
       "sha256": "f95b326a563be6aaa8bff21caafe984a5c18506bb59dafb7d49857c5fabc0436"
     },
     {
-      "bytes": 154,
+      "bytes": 168,
       "path": "requirements-train.lock",
-      "sha256": "eed42a8fb5b01e580e190ca89f03276855ce3452f621b6076e20a3487eba4a8a"
+      "sha256": "f0b0ca5c4aa16d19d57cb5d530c6d657186807bc87663273bdbc2565a52a7d5a"
     },
     {
       "bytes": 1206,
@@ -16777,9 +16777,9 @@
       "sha256": "1de0ec19ecc1339442152840d137d8ed3432acd1ac4fd79756bc43167fcae071"
     },
     {
-      "bytes": 1992,
+      "bytes": 2120,
       "path": "tests/test_publication_contract.py",
-      "sha256": "1994cd22a6f260bb08fa10777a03b5f6dda33cd3817c2219b4194655ed4e4daa"
+      "sha256": "c7bc947448a6acd22647ad68c0bd33366bf0321caf28db19ec0c363d20f4d263"
     },
     {
       "bytes": 3995,
