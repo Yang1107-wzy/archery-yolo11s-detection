@@ -16882,9 +16882,9 @@
       "sha256": "6e2eba7ec045f9564b06a95b665a3f8b0b29ff5659ad3b2ca6b9c4850c11a9a6"
     },
     {
-      "bytes": 3306,
+      "bytes": 3663,
       "path": "tests/test_repository_visuals.py",
-      "sha256": "4ffc02eb39789532d4eb477294e92f6a369846f4da9fa7b7fe22aab4292386b1"
+      "sha256": "5cf41ce926c696caa13ba8eef8815026ac44008eb0e37de3fa3ba02dcb9294d9"
     },
     {
       "bytes": 1589,

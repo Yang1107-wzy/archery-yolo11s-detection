@@ -15,6 +15,8 @@ from archery_ml.viz.repository_visuals import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SAMPLE_IMAGE = next((ROOT / "data/target-arrow-detection-v6/train/images").glob("*"))
+IMAGES_ARE_LFS_POINTERS = SAMPLE_IMAGE.read_bytes().startswith(b"version https://git-lfs.github.com/spec/")
 
 
 def test_canonical_dataset_statistics() -> None:
@@ -54,6 +56,10 @@ def test_canonical_evaluation_protocols() -> None:
     json.dumps(protocols, allow_nan=False)
 
 
+@pytest.mark.skipif(
+    IMAGES_ARE_LFS_POINTERS,
+    reason="Full montage rendering requires Git LFS image payloads; lightweight CI intentionally skips them.",
+)
 def test_generate_all_visuals_and_source_tables(tmp_path: Path) -> None:
     output_dir = tmp_path / "visuals"
     source_dir = tmp_path / "sources"
